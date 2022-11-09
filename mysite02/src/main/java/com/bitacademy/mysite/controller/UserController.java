@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bitacademy.mysite.dao.UserDao;
 import com.bitacademy.mysite.vo.UserVo;
@@ -63,7 +64,8 @@ public class UserController extends HttpServlet {
 			}
 
 			/* 로그인 처리 */
-			
+			HttpSession session = request.getSession(true);
+			session.setAttribute("authUser", authUser);
 			
 			response.sendRedirect(request.getContextPath());
 		}
