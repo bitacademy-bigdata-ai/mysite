@@ -49,10 +49,23 @@ public class UserController extends HttpServlet {
 		} else if("login".equals(action)) {
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
+
+			UserDao dao = new UserDao();
+			UserVo authUser = dao.findByEmailAndPassword(email, password);
 			
-			UserVo authUser = new UserDao().findByEmailAndPassword(email, password);
+			if(authUser == null) {
+				/* 인증 실패 */
+				request.setAttribute("email", email);
+				request
+					.getRequestDispatcher("/WEB-INF/views/user/loginform.jsp")
+					.forward(request, response);
+				return;
+			}
+
+			/* 로그인 처리 */
 			
-			System.out.println(email + ":" + password);
+			
+			response.sendRedirect(request.getContextPath());
 		}
 		
 	}
