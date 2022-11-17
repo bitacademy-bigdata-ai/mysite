@@ -5,7 +5,6 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.bitacademy.mysite.exception.UserRepositoryException;
 import com.bitacademy.mysite.vo.UserVo;
 
 @Repository
@@ -22,7 +21,7 @@ public class UserRepository {
 		return sqlSession.selectOne("user.findByNo", no);
 	}
 	
-	public UserVo findByEmailAndPassword(String email, String password) throws UserRepositoryException {
+	public UserVo findByEmailAndPassword(String email, String password) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("email", email);
 		map.put("password", password);
