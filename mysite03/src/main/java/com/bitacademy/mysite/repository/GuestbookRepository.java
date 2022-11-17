@@ -19,6 +19,10 @@ public class GuestbookRepository {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	public List<GuestbookVo> findAll() {
+		return sqlSession.selectList("guestbook.findAll");
+	}
+		
 	public Boolean deleteByNoAndPassword(Long no, String password) {
 		boolean result = false;
 		
@@ -93,11 +97,7 @@ public class GuestbookRepository {
 		
 		return result;
 	}
-	
-	public List<GuestbookVo> findAll() {
-		return sqlSession.selectList("guestbook.findAll");
-	}
-	
+
 	private Connection getConnection() throws SQLException {
 		Connection conn = null;
 
