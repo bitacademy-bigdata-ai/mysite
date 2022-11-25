@@ -13,6 +13,7 @@ import com.bitacademy.mysite.exception.FileUploadServiceException;
 
 @Service
 public class FileUploadService {
+
 	private static String RESTORE_PATH = "/mysite-uploads";
 	private static String URL_BASE = "/gallery/images";
 	
