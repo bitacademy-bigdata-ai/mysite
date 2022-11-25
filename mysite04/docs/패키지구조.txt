@@ -27,3 +27,4 @@ com.bitacademy.mysite.config.app.mybatis.mappers
 
 com.bitacademy.mysite.config.web
 	|- fileupload.properties
+	|- messages_ko.propertie
