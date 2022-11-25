@@ -8,7 +8,11 @@ com.bitacademy.mysite.config.app
 	|- DBConfig
 	|- MyBatisConfig
 com.bitacademy.mysite.config.web
-	|- 
+	|- MVCConfig
+	|- SecurityConfig
+	|- FileuploadConfig
+	|- MessageResourceConfig
+	
 
 
 [src/main/resource]
@@ -22,3 +26,4 @@ com.bitacademy.mysite.config.app.mybatis.mappers
 	|- ...	
 
 com.bitacademy.mysite.config.web
+	|- fileupload.properties
