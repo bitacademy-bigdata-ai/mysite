@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.bitacademy.mysite.exception.FileUploadServiceException;
 
 @Service
-@PropertySource("classpath:com/bitacademy/mysite/config/web/fileupload.properties")
+@PropertySource("classpath:web/fileupload.properties")
 public class FileUploadService {
 
 	@Autowired
@@ -28,7 +28,7 @@ public class FileUploadService {
 			if(multipartFile.isEmpty()) {
 				return url;
 			}
-
+			
 			File restoreDirectory = new File(env.getProperty("fileupload.uploadLocation"));
 			if(!restoreDirectory.exists()) {
 				restoreDirectory.mkdirs();
