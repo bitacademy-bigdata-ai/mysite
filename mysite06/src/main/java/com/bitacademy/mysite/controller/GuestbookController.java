@@ -44,5 +44,10 @@ public class GuestbookController {
 		@RequestParam(value="password", required=true, defaultValue="") String password) {
 		guestbookService.deleteContents(no, password);
 		return "redirect:/guestbook";
+	}
+	
+	@RequestMapping("/spa")
+	public String indexSPA() {
+		return "guestbook/index-spa";
 	}	
 }
