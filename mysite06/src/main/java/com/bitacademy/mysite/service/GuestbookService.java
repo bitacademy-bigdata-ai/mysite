@@ -16,6 +16,10 @@ public class GuestbookService {
 	public List<GuestbookVo> getContentsList() {
 		return guestbookRepository.findAll();
 	}
+
+	public List<GuestbookVo> getContentsList(Long startNo) {
+		return guestbookRepository.findAll(startNo);
+	}
 	
 	public void deleteContents(Long no, String password) {
 		guestbookRepository.deleteByNoAndPassword(no, password);
@@ -26,5 +30,6 @@ public class GuestbookService {
 		guestbookRepository.insert(vo);
 		System.out.println(vo);
 	}
+
 	
 }
